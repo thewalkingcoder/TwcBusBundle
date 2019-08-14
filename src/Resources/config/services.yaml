@@ -1,0 +1,26 @@
+services:
+  _instanceof:
+    Twc\BusBundle\Command\Interfaces\CommandHandler:
+      tags: ['command.handler']
+
+    Twc\BusBundle\Event\Interfaces\EventHandler:
+      tags: ['event.handler']
+
+    Twc\BusBundle\Query\Interfaces\QueryHandler:
+      tags: ['query.handler']
+
+  Twc\BusBundle\Event\EventBusDispatcher:
+    arguments: [!tagged 'event.handler']
+
+  Twc\BusBundle\Command\CommandBus:
+    factory: 'Twc\BusBundle\Command\CommandBusFactory:build'
+    arguments:
+      - !tagged 'command.handler'
+      - !tagged 'command.middleware'
+    lazy: true
+
+  Twc\BusBundle\Query\QueryBusDispatcher:
+    arguments: [!tagged 'query.handler']
+
+  Twc\BusBundle\Event\EventBusDispatcherMiddleware:
+    tags: ['command.middleware']
