@@ -3,6 +3,7 @@
   "description": "Provide simple way to implement Message Bus concept in Symfony 4",
   "keywords": [
     "symfony",
+    "symfony 4",
     "command bus",
     "Domain events",
     "cqrs",
