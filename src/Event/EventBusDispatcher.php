@@ -2,7 +2,6 @@
 
 namespace Twc\BusBundle\Event;
 
-use Twc\BusBundle\Event\Interfaces\Event;
 use Twc\BusBundle\Event\Interfaces\EventBus;
 
 class EventBusDispatcher implements EventBus
@@ -16,7 +15,7 @@ class EventBusDispatcher implements EventBus
         }
     }
 
-    public function dispatch(Event $event): void
+    public function dispatch($event): void
     {
         $eventClass = get_class($event);
 
@@ -29,7 +28,5 @@ class EventBusDispatcher implements EventBus
                 $handler->handle($event);
             }
         }
-
     }
-
 }
