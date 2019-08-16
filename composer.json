@@ -1,6 +1,7 @@
 {
   "name": "twc/bus-bundle",
   "description": "Provide simple way to implement Message Bus concept in Symfony 4",
+  "type": "symfony-bundle",
   "keywords": [
     "symfony",
     "symfony 4",

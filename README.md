@@ -12,6 +12,9 @@ Thank's [@matGiWeb](https://twitter.com/matGiWeb) for you approach with [cqrs-sk
 
 CQRS (Command Query Responsibility Segregation) it's an architectural pattern that aims to separate the **writing** (Command) and **reading** (Query).
 
+## Pré-requis
+
+Autowiring
 
 ## Installation
 
@@ -21,11 +24,20 @@ composer require twc/bus-bundle
 
 ```
 
+Active bundle
+
+```
+//config/bundle.php
+
+Twc\BusBundle\TwcBusBundle::class => ['all' => true]
+
+```
+
 ## How to use ?
 
 You only have to implement the desired interface
 
-### About commands
+### About Commands
 
 | topic  | Interface |
 |--------|-----------|
@@ -47,7 +59,8 @@ You only have to implement the desired interface
 | Query | Twc\BusBundle\Query\Interfaces\Query |
 | QueryHandler | Twc\BusBundle\Event\Interfaces\QueryHandler |
 
-That's all ! 
+That's all !
+ 
 CommandBus, EventBus, QueryBus will do the work, thank's Dependencies Injection and autowiring in symfony.
 
 
