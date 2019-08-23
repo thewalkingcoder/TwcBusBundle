@@ -15,7 +15,8 @@ namespace App\Employee\Command;
 
 use Twc\BusBundle\Command\Interfaces\Command;
 
-final class CreateNewEmployee implements Command {
+final class CreateNewEmployee implements Command
+{
 
     private $name;
     private $firstName;
@@ -37,7 +38,8 @@ namespace App\Employee\Command;
 
 use Twc\BusBundle\Command\Interfaces\CommandHandler;
 
-class CreateNewEmployeeHandler implements CommandeHandler{
+class CreateNewEmployeeHandler implements CommandeHandler
+{
  
    
 }
@@ -89,7 +91,8 @@ namespace App\Employee\Domain\Event;
 
 use Twc\BusBundle\Event\Interfaces\Event;
 
-final class SendWelcomeEmployeeMail implements Event {
+final class SendWelcomeEmployeeMail implements Event
+{
 
     private $firstName;
     private $mail;
@@ -115,7 +118,8 @@ namespace App\Employee\Events;
 
 use Twc\BusBundle\Event\Interfaces\Event;
 
-class SendWelcomeEmployeeMailHandler implements EventHandler {
+class SendWelcomeEmployeeMailHandler implements EventHandler
+{
 
 }
 
@@ -139,7 +143,8 @@ Permet de rattacher le handler à un event
 ```
 ...
 
-class SendWelcomeEmployeeMailHandler implements EventHandler{
+class SendWelcomeEmployeeMailHandler implements EventHandler
+{
 
      public function handle($event): void
      {
@@ -160,7 +165,8 @@ Maintenant il ne reste plus qu'a modifier votre command
 ```
 ...
 
-class CreateNewEmployeeHandler implements CommandeHandler{
+class CreateNewEmployeeHandler implements CommandeHandler
+{
 
      public function handle(Command $command): CommandResponse
      {
@@ -186,11 +192,13 @@ namespace App\Employee\Query;
 
 use Twc\BusBundle\Query\Interfaces\Query;
 
-class SearchEmployee implements Query{
+class SearchEmployee implements Query
+{
 
      private $keywords;
 
-     public function __construct(string $keywords) {
+     public function __construct(string $keywords)
+     {
         ...
      }
    
@@ -206,8 +214,9 @@ namespace App\Employee\Query;
 
 use Twc\BusBundle\Query\Interfaces\QueryHandler;
 
-class SearchEmployeeHandler implements QueryHandler{
-     
+class SearchEmployeeHandler implements QueryHandler
+{
+
    
 }
 
@@ -230,9 +239,10 @@ Permet de rattacher le handler à une query
 ```
 ...
 
-class SearchEmployeeHandler implements QueryHandler{
+class SearchEmployeeHandler implements QueryHandler
+{
 
-     public function handle($query): array
+     public function handle($query)
      {
          ....
 
