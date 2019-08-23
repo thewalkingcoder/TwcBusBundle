@@ -37,5 +37,4 @@ class EventBusDispatcherMiddleware extends CommandBus implements CommandBusMiddl
         $this->bus = $next;
         return $this;
     }
-
 }

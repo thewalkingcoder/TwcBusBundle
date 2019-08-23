@@ -10,7 +10,6 @@ final class CommandResponse
 
     public function __construct($response, int $status = 200, ?iterable $events = null)
     {
-
         $this->response = $response;
         $this->status = $status;
         $this->events = $events;
@@ -47,6 +46,4 @@ final class CommandResponse
     {
         return $this->events;
     }
-
-
 }

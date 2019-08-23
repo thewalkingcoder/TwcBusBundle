@@ -7,7 +7,6 @@ use Twc\BusBundle\Query\Interfaces\Query;
 
 class QueryBusDispatcher
 {
-
     private $handlers;
 
     public function __construct(iterable $handlers)

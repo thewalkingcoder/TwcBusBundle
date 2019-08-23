@@ -14,7 +14,12 @@ CQRS (Command Query Responsibility Segregation) it's an architectural pattern th
 
 ## Pré-requis
 
-Autowiring
+symfony powerfull DI with autowire and autoconfigure enable
+
+```
+
+```
+
 
 ## Installation
 
@@ -24,18 +29,10 @@ composer require twc/bus-bundle
 
 ```
 
-Active bundle
-
-```
-//config/bundle.php
-
-Twc\BusBundle\TwcBusBundle::class => ['all' => true]
-
-```
 
 ## How to use ?
 
-You only have to implement the desired interface
+If you know CQRS pattern, you only have to implement the desired interface
 
 ### About Commands
 
@@ -59,10 +56,21 @@ You only have to implement the desired interface
 | Query | Twc\BusBundle\Query\Interfaces\Query |
 | QueryHandler | Twc\BusBundle\Event\Interfaces\QueryHandler |
 
+## About Bus
+
+| topic  | Interface |
+|--------|-----------|
+| CommandBusDispatcher | Twc\BusBundle\Command\CommandBusDispatcher |
+| EventBusDispatcher | Twc\BusBundle\Event\EventBusDispatcher |
+| QueryBusDispatcher | Twc\BusBundle\Query\QueryBusDispatcher |
+
+
 That's all !
  
 CommandBus, EventBus, QueryBus will do the work, thank's Dependencies Injection and autowiring in symfony.
 
+# Samples
 
+- [exemple (fr)](./docs/cqrs_fr.md)
 
 

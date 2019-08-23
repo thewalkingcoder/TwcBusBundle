@@ -5,7 +5,6 @@ namespace Twc\BusBundle\Command;
 use Twc\BusBundle\Command\Interfaces\Command;
 use Twc\BusBundle\Command\Interfaces\CommandBusMiddleware;
 
-
 final class CommandBusDispatcher extends CommandBus implements CommandBusMiddleware
 {
     private $handlers;
@@ -17,7 +16,6 @@ final class CommandBusDispatcher extends CommandBus implements CommandBusMiddlew
         foreach ($handlers as $handler) {
             $this->handlers[$handler->listenTo()] = $handler;
         }
-
     }
 
     public function dispatch(Command $command): CommandResponse
@@ -35,5 +33,4 @@ final class CommandBusDispatcher extends CommandBus implements CommandBusMiddlew
     {
         return $this;
     }
-
 }
