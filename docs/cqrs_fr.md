@@ -336,7 +336,6 @@ class EmployeeController extends AbstractController
 
 Même principe pour une query
 
-
 ```
 
 namespace App\Employee\Presenter;

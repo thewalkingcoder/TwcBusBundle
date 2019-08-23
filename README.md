@@ -17,6 +17,13 @@ CQRS (Command Query Responsibility Segregation) it's an architectural pattern th
 symfony powerfull DI with autowire and autoconfigure enable
 
 ```
+services:
+
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false
 
 ```
 
