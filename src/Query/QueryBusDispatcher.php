@@ -20,9 +20,8 @@ class QueryBusDispatcher
     /**
      * @param Query $query
      *
-     * @return array
      */
-    public function dispatch(Query $query): array
+    public function dispatch(Query $query)
     {
         $queryClass = get_class($query);
         if (false === array_key_exists($queryClass, $this->handlers)) {
