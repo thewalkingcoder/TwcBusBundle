@@ -311,7 +311,7 @@ class DoctrineTransactionMiddleware extends CommandBus implements CommandBusMidd
 
 ### Déclaration est ordre de déclenchement des Middlewares
 
-Pour qu'un middleware soit appelé par le CommandBus il suffit de tagguer votre classe dans le services.yaml
+Pour qu'un middleware soit appelé par le CommandBus il suffit de tagguer votre classe dans le **services.yaml**
 
 
 ```
