@@ -309,6 +309,34 @@ class DoctrineTransactionMiddleware extends CommandBus implements CommandBusMidd
 
 ```
 
+### Déclaration est ordre de déclenchement des Middlewares
+
+Pour qu'un middleware soit appelé par le CommandBus il suffit de tagguer votre classe dans le services.yaml
+
+
+```
+
+    App\Middlewares\CustomMiddleware:
+        tags: ['twc_bus.command.middleware']   
+
+```
+
+Si vous avez plusieurs middlewares et qu'un ordre doit être respecté, vous devez préciser la priorité.
+
+(la priorité la plus haute est executée en 1er)
+
+```
+
+    App\Middlewares\SecondMiddleware:
+        tags: ['twc_bus.command.middleware']
+            - { name: 'twc_bus.command.middleware', priority: 100}
+
+    App\Middlewares\FirstMiddleware:
+        tags: ['twc_bus.command.middleware']
+            - { name: 'twc_bus.command.middleware', priority: 200}
+
+```
+
 ## La tuyauterie
 
 Il ne reste plus qu'à appeler les Bus qui s'occuperont de la tuyauterie, rien de plus simple
