@@ -328,11 +328,11 @@ Si vous avez plusieurs middlewares et qu'un ordre doit être respecté, vous dev
 ```
 
     App\Middlewares\SecondMiddleware:
-        tags: ['twc_bus.command.middleware']
+        tags: 
             - { name: 'twc_bus.command.middleware', priority: 100}
 
     App\Middlewares\FirstMiddleware:
-        tags: ['twc_bus.command.middleware']
+        tags: 
             - { name: 'twc_bus.command.middleware', priority: 200}
 
 ```
