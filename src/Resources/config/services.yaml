@@ -6,7 +6,7 @@ services:
   Twc\BusBundle\Command\CommandBusFactory: ~
 
   Twc\BusBundle\Command\CommandBus:
-    factory: 'Twc\BusBundle\Command\CommandBusFactory:build'
+    factory: ['Twc\BusBundle\Command\CommandBusFactory', 'build']
     arguments:
       - !tagged 'twc_bus.command.handler'
       - !tagged 'twc_bus.command.middleware'

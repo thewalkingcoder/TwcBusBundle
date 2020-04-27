@@ -22,8 +22,8 @@
   ],
   "require": {
     "php": "^7.1",
-    "symfony/dependency-injection": "^4.2",
-    "symfony/framework-bundle": "^4.2"
+    "symfony/dependency-injection": "^4.4",
+    "symfony/framework-bundle": "^4.4"
   },
   "autoload": {
     "psr-4": {
