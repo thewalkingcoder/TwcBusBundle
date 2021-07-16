@@ -5,6 +5,7 @@
   "keywords": [
     "symfony",
     "symfony 4",
+    "symfony 5",
     "command bus",
     "Domain events",
     "cqrs",
@@ -22,8 +23,8 @@
   ],
   "require": {
     "php": "^7.1",
-    "symfony/dependency-injection": "^4.4",
-    "symfony/framework-bundle": "^4.4"
+    "symfony/dependency-injection": "^4.4|^5.*",
+    "symfony/framework-bundle": "^4.4|^5.*"
   },
   "autoload": {
     "psr-4": {
